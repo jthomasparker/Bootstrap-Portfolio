@@ -1,8 +1,22 @@
+
+/* Comments for days... */
+
+
+/* formatting required for sticky footer
+without wrappers =) */
 html{
     min-height: 100%;
     position: relative;
 }
 
+/* screw scrollbars, they're so netscape */
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* top padding necessary to give navbar breathing room
+    bottom margin necessary for sticky footer */
 body{
     background-image: url("../images/concrete_seamless.png");
     background-repeat: repeat;
@@ -12,60 +26,108 @@ body{
     overflow-y: scroll;
     padding: 75px 0 0;
     min-height: 100%;
-    margin-bottom: 60px;
-       
+    margin-bottom: 60px;     
 }
 
-::-webkit-scrollbar{
-    display: none;
+/*Navbar formatting*/
+#topheader .navbar-brand{
+    font-family: 'Scope One', serif; /* GOOGLE FONT */
+    font-weight: bold;
+    font-size: 16pt;
 }
 
-.navbar-brand{
-    font-family: Arial, Helvetica, sans-serif;
+#topheader .navbar-nav li > a {
+    color: #a63a50;
+    font-family: 'Scope One', serif;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 0 thin;
+    border-color: #fdfdff;
+    box-sizing: border-box;
+    -webkit-transition: .75s;
+    transition: .75s; 
+}
+
+#topheader .navbar-brand, #topheader .navbar-nav li > a:hover,
+    :focus{
+    background-color: #a63a50;
+    color: #fdfdff;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 0 thin;
+    border-color: #a63a50;
+}
+
+#topheader .navbar-nav li.active > a:hover, :focus{
+    background-color: #a63a50;
+    color: #fdfdff;
+}
+
+#topheader .navbar-nav li.active > a {
+  /*leaving this here in case I want to get rid
+    of the fancy css animations (Originally active
+    page just had a regular background)
+    background-color: #a63a50;
+    color: #fdfdff; */
+    background-color: #fdfdff;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-color: #a63a50;
+    border-right-color: #a63a50;
+    border-width: 0 thin;
+    box-sizing: border-box;
+    -webkit-animation-name: nav-animation;
+    -webkit-animation-duration: 2s;
+    animation-name: nav-animation;
+    animation-duration: 2s;
+}
+/* animations that fade the active page nav link */
+@-webkit-keyframes nav-animation {
+    0%{
+    background-color: #a63a50;
+    color: #fdfdff;      
+    }
+    100%{
+        background-color: #fdfdff;
+        color: #a63a50;        
+    }
 }
 
 
-#profile-img{
-    height: 163px;
-    width: 130px;
-    padding: 0 20px 0 0;
+@keyframes nav-animation {
+    0%{
+        background-color: #a63a50;
+        color: #fdfdff;      
+        }
+        100%{
+            background-color: #fdfdff;
+            color: #a63a50;        
+        }
 }
 
-.footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 65px;
-    background: #a63a50;
-    color: #393d3f;
-    text-align: center;
-    line-height: 400%;
-    font-size: 12pt;
-}
 
-.icon-img{
-    width: 60px;
-    height: 60px;
-}
-
-p{
-    line-height: 200%;
-    padding-bottom: 20px;
-}
-
+/* Main content formatting */
 article, aside{
     background: #fdfdff;
 }
 
-.panel-primary > .panel-heading{
-   background: #546a7b;
-   color: #fdfdff;
-}
-
+/* main panel/article */
 .panel-primary{
     border-color: #546a7b;
 }
 
+.panel-primary > .panel-heading{
+    background: #546a7b;
+    color: #fdfdff;
+}
+
+#profile-img{
+    height: 163px;
+    width: auto;
+    padding: 0 20px 0 0;
+}
+
+/* sidebar/aside */
 .panel-info > .panel-heading{
     background: #62929e;
     color: #fdfdff;
@@ -75,64 +137,16 @@ article, aside{
     border-color: #62929e;
 }
 
-
-#topheader .navbar-brand, #topheader .navbar-nav li > a {
-    color: #a63a50;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: background-color .2s, color .2;
+.icon-img{
+    width: 60px;
+    height: 60px;
 }
 
-#topheader .navbar-brand, #topheader .navbar-nav li > a:hover,
-    :focus{
-        background-color: #a63a50;
-        color: #fdfdff;
-}
 
-#topheader .navbar-nav li.active > a {
-    background-color: #a63a50;
-    color: #fdfdff;
-    
-}
+/* Portfolio content/fancy stuff for the carousel */
 
-.form-control{
-    color: #393d3f;
-    background-color: #fdfdff;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    
-}
-
-.form-control:hover{
-    border-color:#62929e;
-}
-.form-control:focus{
-    border-color: #393d3f;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    outline-color: none;
-}
-
-.form-control:invalid{
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    border-color: #a63a50;
-}
-textarea.form-control{
-    height: 150px
-}
-
-.btn-default{
-    color: #393d3f;
-    border-color: #62929e;  
-}
-
-.btn-default:hover{
-    color: #fdfdff;
-    border-color: #393d3f;
-    background-color: #a63a50;
-    
-}
-
+/* container for the images. This is what allows
+for fancier stuff than using img src="" */
 .carousel .carousel-inner .item{
     height: 80vh;
     min-height: 600px;
@@ -147,13 +161,10 @@ textarea.form-control{
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+    font-family: 'Scope One', serif;
 }
 
-.carousel-control:focus{
-    background-color: #a63a50;
-    
-}
-
+/* the carousel images */
 #img-hangman{
     background-image: url('../images/hangman-image.jpeg')
 }
@@ -174,6 +185,7 @@ textarea.form-control{
     background-image: url("../images/rps-image.jpeg");
 }
 
+/* the carousel fancy stuff */
 .carousel-fade .carousel-inner .item {
     -webkit-transition-property: opacity;
     transition-property: opacity;
@@ -208,4 +220,80 @@ textarea.form-control{
     opacity: 0.3;
     transition: all 0.2s ease-out; 
 }
+
+/* Contact form fancy stuff */
+.form-control{
+    color: #393d3f;
+    background-color: #fdfdff;
+    -webkit-transition: 1s;
+    transition: 1s; 
+}
+
+label.control-label{
+    font-family: 'Scope One', serif;
+}
+
+.form-control:hover{
+    border-color:#62929e;
+    border-style: solid;    
+}
+
+.form-control:focus{
+    border-color: #393d3f;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-style: solid;
+    border-width: thin;
+}
+
+.form-control:invalid{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-color: #a63a50;
+}
+
+textarea.form-control{
+    height: 150px
+}
+
+.btn-default{
+    color: #393d3f;
+    border-color: #62929e;  
+    font-family: 'Scope One', serif;
+    font-weight: bold;
+    -webkit-transition: 1s;
+    transition: 1s; 
+}
+
+.btn-default:hover{
+    color: #fdfdff;
+    border-color: #393d3f;
+    background-color: #a63a50;  
+}
+
+
+/* sticky footer */
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    background: #a63a50;
+    color: #393d3f;
+    text-align: center;
+    line-height: 400%;
+    font-size: 12pt;
+}
+
+
+/* misc formatting */
+p{
+    line-height: 200%;
+    padding-bottom: 20px;
+}
+
+h2, h4{
+    font-family: 'Scope One', serif;
+}
+
 
