@@ -185,6 +185,14 @@ for fancier stuff than using img src="" */
     background-image: url("../images/rps-image.jpeg");
 }
 
+#img-cc{
+    background-image: url("../images/concert-cloud-image.JPG")
+}
+
+#img-console-app{
+    background-image: url("../images/console-image.jpg")
+}
+
 /* the carousel fancy stuff */
 .carousel-fade .carousel-inner .item {
     -webkit-transition-property: opacity;
