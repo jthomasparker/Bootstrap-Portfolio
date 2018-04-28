@@ -193,6 +193,10 @@ for fancier stuff than using img src="" */
     background-image: url("../images/console-image.jpg")
 }
 
+#img-word-guess{
+    background-image: url("../images/word-guess.jpg")
+}
+
 /* the carousel fancy stuff */
 .carousel-fade .carousel-inner .item {
     -webkit-transition-property: opacity;
