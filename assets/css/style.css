@@ -201,6 +201,10 @@ for fancier stuff than using img src="" */
     background-image: url("../images/bamazon-image.jpg")
 }
 
+#img-friend-finder{
+    background-image: url("../images/friend-finder.jpg")
+}
+
 /* the carousel fancy stuff */
 .carousel-fade .carousel-inner .item {
     -webkit-transition-property: opacity;
