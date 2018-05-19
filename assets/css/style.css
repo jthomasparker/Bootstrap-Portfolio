@@ -205,6 +205,10 @@ for fancier stuff than using img src="" */
     background-image: url("../images/friend-finder.jpg")
 }
 
+#img-burger{
+    background-image: url("../images/burger-image.jpg")
+}
+
 /* the carousel fancy stuff */
 .carousel-fade .carousel-inner .item {
     -webkit-transition-property: opacity;
